@@ -6,25 +6,25 @@
 
 ![Energy Separations](img/AndEnergy.png)
 
-## 📌 Overview
+## Overview
 
 **AdaEnergy-HOOD** is a fine-tuning framework for out-of-domain (OOD) intent detection that combines cross-entropy with an **adaptive energy-based regularisation term**. Unlike post-hoc methods or Monte Carlo Dropout, our approach requires **no additional inference cost** — the energy score comes from a single forward pass.
 
 ### Key Innovations
 
-- 🔄 **Dynamic Margins** — adapt to per-epoch energy statistics, eliminating manual tuning
-- 📈 **Symmetric Ramp Schedule** — balances discriminative learning with energy separation
-- 🎯 **Hard OOD Integration** — uses task-specific hard examples (no generative model)
-- ⚡ **1× Inference Cost** — same as standard classifier without pos-hoc time loss
+- **Dynamic Margins** — adapt to per-epoch energy statistics, eliminating manual tuning
+- **Symmetric Ramp Schedule** — balances discriminative learning with energy separation
+- **Hard OOD Integration** — uses task-specific hard examples (no generative model)
+- **1× Inference Cost** — same as standard classifier without pos-hoc time loss
 
 
 ### Key Advantages
 
-- 🚀 **Lightning Fast Inference** — runs on BERT-base with inference speed significantly faster than large language models (LLMs), making it suitable for real-time applications
-- 🔧 **Architecture Agnostic** — codebase supports various BERT-family architectures (RoBERTa, DistilBERT, ALBERT) and easily extensible for custom research
-- 🧩 **Modular Hard OOD Integration** — easy to add domain-specific or synthetically generated hard OOD examples without retraining from scratch
-- 📊 **Headroom for Improvement** — significant potential for accuracy gains through hyperparameter tuning, schedule optimization, and post-hoc score combination
-- 🛡️ **Security Filter for LLMs & Agents** — serves as an efficient pre-filter to assess query safety and relevance before routing to expensive LLMs, reducing cost and preventing unwanted processing
+- **Lightning Fast Inference** — runs on BERT-base with inference speed significantly faster than large language models (LLMs), making it suitable for real-time applications
+- **Architecture Agnostic** — codebase supports various BERT-family architectures (RoBERTa, DistilBERT, ALBERT) and easily extensible for custom research
+- **Modular Hard OOD Integration** — easy to add domain-specific or synthetically generated hard OOD examples without retraining from scratch
+- **Headroom for Improvement** — significant potential for accuracy gains through hyperparameter tuning, schedule optimization, and post-hoc score combination
+- **Security Filter for LLMs & Agents** — serves as an efficient pre-filter to assess query safety and relevance before routing to expensive LLMs, reducing cost and preventing unwanted processing
 
 ---
 
