@@ -15,7 +15,16 @@
 - 🔄 **Dynamic Margins** — adapt to per-epoch energy statistics, eliminating manual tuning
 - 📈 **Symmetric Ramp Schedule** — balances discriminative learning with energy separation
 - 🎯 **Hard OOD Integration** — uses task-specific hard examples (no generative model)
-- ⚡ **1× Inference Cost** — same as standard classifier (vs 20× for MC Dropout)
+- ⚡ **1× Inference Cost** — same as standard classifier without pos-hoc time loss
+
+
+### Key Advantages
+
+- 🚀 **Lightning Fast Inference** — runs on BERT-base with inference speed significantly faster than large language models (LLMs), making it suitable for real-time applications
+- 🔧 **Architecture Agnostic** — codebase supports various BERT-family architectures (RoBERTa, DistilBERT, ALBERT) and easily extensible for custom research
+- 🧩 **Modular Hard OOD Integration** — easy to add domain-specific or synthetically generated hard OOD examples without retraining from scratch
+- 📊 **Headroom for Improvement** — significant potential for accuracy gains through hyperparameter tuning, schedule optimization, and post-hoc score combination
+- 🛡️ **Security Filter for LLMs & Agents** — serves as an efficient pre-filter to assess query safety and relevance before routing to expensive LLMs, reducing cost and preventing unwanted processing
 
 ---
 
@@ -61,7 +70,7 @@ For a batch of $B$ samples with sequence length $L$, let $t_{\text{forward}}(B, 
 | MSP / Energy (post-hoc) | 1 | Softmax / logsumexp | $1\times$ |
 | Mahalanobis (post-hoc) | 1 | $\mathcal{O}(d^2)$ covariance + $\mathcal{O}(Cd)$ distance | $1\times + \delta$ |
 | KNN (post-hoc) | 1 | $\mathcal{O}(Nd)$ distance + retrieval | $1\times + \Delta$ |
-| MC Dropout ($T=20$) | 20 | Variance computation | $20\times$ |
+| MC Dropout ($T=10$) | 10 | Variance computation | $10\times$ |
 | Deep Ensemble ($M=5$) | 5 | Ensemble averaging | $5\times$ |
 
 where:
