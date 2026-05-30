@@ -1,4 +1,5 @@
-# AdaEnergy-HOOD: Energy-Based Fine-Tuning with Adaptive Margins for OOD Intent Detection
+# AdaEnergy & HOOD
+## Energy-Based Fine-Tuning with Adaptive Margins for OOD Intent Detection with Hard OOD samples on CLINC150
 
 > **State-of-the-art *(for 30 may 2026)* OOD detection on CLINC150 with 98.35% AUROC and 7.80% FPR@95TPR — zero inference overhead!** 
 
