@@ -41,7 +41,7 @@
 
 **Our best model beats state-of-the-art by +1.59 pp AUROC and -10.52 pp FPR@95TPR!**
 
-![state-of-the-art](img/results.png)
+![state-of-the-art](img/SotA.png)
 
 ---
 
