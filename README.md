@@ -61,7 +61,7 @@ A key advantage of our approach is **zero inference overhead**. The OOD score $E
 
 ### Theoretical Inference Cost
 
-For a batch of $B$ samples with sequence length $L$, let $t_{\text{forward}}(B, L)$ be the time for a single forward pass through the BERT encoder and classification head. The table below compares the theoretical inference cost of different OOD detection methods.
+Time for a single forward pass through the BERT encoder and classification head. The table below compares the theoretical inference cost of different OOD detection methods.
 
 | Method | Forward Passes | Additional Computation | 
 |--------|----------------|------------------------|
