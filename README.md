@@ -20,11 +20,11 @@
 
 ### Key Advantages
 
-- **Lightning Fast Inference** — runs on BERT-base with inference speed significantly faster than large language models (LLMs), making it suitable for real-time applications
-- **Architecture Agnostic** — codebase supports various BERT-family architectures (RoBERTa, DistilBERT, ALBERT) and easily extensible for custom research
-- **Modular Hard OOD Integration** — easy to add domain-specific or synthetically generated hard OOD examples without retraining from scratch
+- **Lightning Fast Inference** — runs on BERT-base with inference speed significantly faster than large models, making it suitable for real-time applications
+- **Architecture Agnostic** — codebase supports various BERT-family architectures and easily extensible for custom research
+- **Easy Hard OOD Integration** — easy to add domain-specific or synthetically generated hard OOD examples
 - **Headroom for Improvement** — significant potential for accuracy gains through hyperparameter tuning, schedule optimization, and post-hoc score combination
-- **Security Filter for LLMs & Agents** — serves as an efficient pre-filter to assess query safety and relevance before routing to expensive LLMs, reducing cost and preventing unwanted processing
+- **Filter for LLMs & Agents** — serves as an efficient pre-filter to assess query safety and relevance before routing to expensive LLMs, reducing cost and preventing unwanted processing
 
 ---
 
