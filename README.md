@@ -63,23 +63,21 @@ A key advantage of our approach is **zero inference overhead**. The OOD score $E
 
 For a batch of $B$ samples with sequence length $L$, let $t_{\text{forward}}(B, L)$ be the time for a single forward pass through the BERT encoder and classification head. The table below compares the theoretical inference cost of different OOD detection methods.
 
-| Method | Forward Passes | Additional Computation | Relative Time |
-|--------|----------------|------------------------|---------------|
+| Method | Forward Passes | Additional Computation | 
+|--------|----------------|------------------------|
 | Standard classifier (ID only) | 1 | None | $1\times$ |
-| **AdaEnergy-HOOD (ours)** | **1** | **None (energy from logits)** | **$1\times$** |
-| MSP / Energy (post-hoc) | 1 | Softmax / logsumexp | $1\times$ |
-| Mahalanobis (post-hoc) | 1 | $\mathcal{O}(d^2)$ covariance + $\mathcal{O}(Cd)$ distance | $1\times + \delta$ |
-| KNN (post-hoc) | 1 | $\mathcal{O}(Nd)$ distance + retrieval | $1\times + \Delta$ |
-| MC Dropout ($T=10$) | 10 | Variance computation | $10\times$ |
-| Deep Ensemble ($M=5$) | 5 | Ensemble averaging | $5\times$ |
+| **AdaEnergy-HOOD (ours)** | **1** | **None (energy from logits)** |
+| MSP / Energy (post-hoc) | 1 | Softmax / logsumexp |
+| Mahalanobis (post-hoc) | 1 | $\mathcal{O}(Cd)$ distance |
+| KNN (post-hoc) | 1 | $\mathcal{O}(Nd)$ distance + retrieval |
+| MC Dropout ($T=10$) | 10 | Variance computation |
+| Deep Ensemble ($M=5$) | 5 | Ensemble averaging | 
 
 where:
 - $d = 768$ (BERT embedding dimension)
 - $C = 150$ (number of intent classes)
 - $N = 15,000$ (training set size for KNN)
-- $\delta$ = small constant for matrix operations
-- $\Delta$ = significant overhead for distance computations
 
-**Unlike MC Dropout (20× slower) or ensembles (5× slower), our method adds zero inference overhead!**
+**Unlike other effictive OOD methods, our method adds zero inference overhead!**
 
 ![state-of-the-art](img/radar.png)
